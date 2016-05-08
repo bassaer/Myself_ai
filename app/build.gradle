@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.nakayama.myself_ai"
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile files('libs/docomo-aitalk-android-sdk-1.0.1.jar')
+    compile files('libs/docomo-common-android-sdk-1.0.2.jar')
+    compile files('libs/jackson-annotations-2.2.3.jar')
+    compile files('libs/jackson-core-2.2.3.jar')
+    compile files('libs/jackson-databind-2.2.3.jar')
+    compile files('libs/android-websocket.jar')
+    compile files('libs/sbm..jar')
+    compile files('libs/speechrec-audio-codecs.jar')
+    compile files('libs/speechrec-client.jar')
+    compile files('libs/speechrec-service.jar')
+    compile 'com.google.android.gms:play-services:4.1.+'
+}
